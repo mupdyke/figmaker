@@ -1,0 +1,30 @@
+The BCSOLVE manual: 
+Usage
+
+Discrete packing puzzle solver.
+Version 0.82, 1 November 2003
+Author: Bruce Cropley (cropleyb at yahoo.com.au)
+Usage: BCSolve082 [-dQS] [-s piece_set] [-F sols] [-ffigurefile] [-m model]
+
+   -d: Show startup debugging (initial # moves per piece)
+   -Q: Don't show solutions found. (for testing)
+   -S: Show solution statistics
+   -s: [SEDB]: Use which piece set
+       SOMA, Extended SOMA, Double SOMA, Bedlam
+       Usually defaults using the number of cubelets in the figure.
+   -F: sols: Calculate a given number of solutions. Default is all.
+   -f: figurefile: Solve a figure described in the figure file.
+       Default is a cube. (Soma and Bedlam)
+   -m: Model to solve within the file.
+       Defaults to the first in the file.
+       The solver just searches for the first line starting
+       with / that contains the given model name.
+
+Example:   BCSolve082 -ss -fcubit3.fig >cubit3.res
+Included in the zip file are a few sample figure template files; these are example inputs to the -f argument. 
+
+It uses the number of cubelets in the figure to determine which piece set to use:
+27: Soma
+40: Soma plus
+54: Double soma
+64: Bedlam
